@@ -21,4 +21,16 @@ public class SingTest {
 		assertTrue(printer==PrinterSingleton.getInstance());
 	}
 	
+	@Test
+	public void testPrintQueue() {
+		printer.add("doc");
+		assertTrue(printer.getImprQueue().equals(PrinterSingleton.getInstance().getImprQueue()));
+	}
+	
+	@Test
+	public void testPrintQueueDiffHashes() {
+		printer.add("doc");
+		assertFalse(printer.getImprQueue()==PrinterSingleton.getInstance().getImprQueue());
+	}
+	
 }
