@@ -1,6 +1,6 @@
 package Singleton;
 
-public interface Printer {
+public interface IPrinter {
 	public boolean add(String doc);
 	String[] getImprQueue();
 }

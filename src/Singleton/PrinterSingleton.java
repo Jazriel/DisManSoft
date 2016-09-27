@@ -3,15 +3,15 @@ package Singleton;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Sing implements Printer {
-	private Sing(){
+public class PrinterSingleton implements IPrinter {
+	private PrinterSingleton(){
 		imprQueue = new LinkedList<String>();
 	}
-	static private Sing sing = new Sing();
+	static private PrinterSingleton sing = new PrinterSingleton();
 	
 	private Queue<String> imprQueue;
 
-	static public Sing getInstance(){
+	static public PrinterSingleton getInstance(){
 		return sing;
 	}
 	

@@ -3,13 +3,14 @@ package Singleton;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import Singleton.Sing;
+import Singleton.PrinterSingleton;
 
 public class SingTest {
 
 	@Test
 	public void testGetInstance() {
-		assertTrue(Sing.getInstance()==Sing.getInstance());
+		IPrinter pr = PrinterSingleton.getInstance();
+		assertTrue(pr==PrinterSingleton.getInstance());
 	}
 	
 }
