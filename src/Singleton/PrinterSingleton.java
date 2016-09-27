@@ -1,7 +1,7 @@
 package Singleton;
 
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 
 public class PrinterSingleton implements IPrinter {
 	private PrinterSingleton(){
@@ -9,19 +9,28 @@ public class PrinterSingleton implements IPrinter {
 	}
 	static private PrinterSingleton sing = new PrinterSingleton();
 	
-	private Queue<String> imprQueue;
+	private List<String> imprQueue;
 
-	static public PrinterSingleton getInstance(){
-		return sing;
+	static public IPrinter getInstance(){
+		return PrinterSingleton.sing;
 	}
-	
+	/*
+	 * (non-Javadoc)
+	 * @see Singleton.IPrinter#add(java.lang.String)
+	 * static public IPrinter getInstance(){
+	 *	if(PrinterSingleton.sing==null){
+	 *		PrinterSingleton.sing = new PrinterSingleton();
+	 *	}
+	 *	return PrinterSingleton.sing;
+	 * }
+	 */
 	public boolean add(String doc){
 		return imprQueue.add(doc);
 	}
 	
 	
-	public String[] getImprQueue(){
-		return (String[]) imprQueue.toArray();
+	public List<String> getImprQueue(){
+		return imprQueue.subList(0, imprQueue.size());
 	}
 
 	
