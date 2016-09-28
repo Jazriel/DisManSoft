@@ -1,4 +1,4 @@
-package Vehicles.test;
+package Vehicles;
 
 import org.junit.Before;
 import org.junit.Test;
