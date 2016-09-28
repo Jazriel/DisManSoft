@@ -1,5 +1,6 @@
 package Vehicles.concrete;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import Vehicles.ABCCar;
@@ -12,11 +13,10 @@ import Vehicles.Wheel;
 public class RenaultMegane extends ABCCar {
 
 	public RenaultMegane() {
-		super();
-		IWheel leftFrontWheel = new Wheel();
-		IWheel rightFrontWheel = new Wheel();
-		IWheel leftRearWheel = new Wheel();
-		IWheel rightRearWheel = new Wheel();
+		IWheel leftFrontWheel = new Wheel("leftFront");
+		IWheel rightFrontWheel = new Wheel("rightFront");
+		IWheel leftRearWheel = new Wheel("leftRearWheel");
+		IWheel rightRearWheel = new Wheel("rightRearWheel");
 		List<IWheel> temporalWheels = new LinkedList<IWheel>();
 		temporalWheels.add(rightFrontWheel);
 		temporalWheels.add(leftFrontWheel);
@@ -28,9 +28,11 @@ public class RenaultMegane extends ABCCar {
 			}
 		};
 		super.steering = new SimpleSteering(temporalWheels);
-		temporalWheels.add(leftRearWheel);
-		temporalWheels.add(rightRearWheel);
-		super.wheels = temporalWheels;
+		List<IWheel> allWheels = new ArrayList<>(temporalWheels);
+		
+		allWheels.add(leftRearWheel);
+		allWheels.add(rightRearWheel);
+		super.wheels = allWheels;
 	}
 
 }
