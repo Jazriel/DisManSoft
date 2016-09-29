@@ -14,14 +14,14 @@ public class Wheel implements IWheel {
 	
 	@Override
 	public void accelerate(double km) {
-		System.out.println(name);
+		System.out.println("accelerate "+name);
 		velocity += km;
 	}
 
 	@Override
 	public void setAngle(double degrees) {
-		System.out.println(name);
 		angle = degrees;
+		System.out.println(name + " rotates to " + (new Double(angle)).toString());
 	}
 
 	public double getVelocity() {

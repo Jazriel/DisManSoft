@@ -6,9 +6,9 @@ import java.util.List;
 
 import Vehicles.ABCCar;
 import Vehicles.IWheel;
+import Vehicles.InverseSteering;
 import Vehicles.JohnDeere;
 import Vehicles.MultiWheelDriving;
-import Vehicles.SimpleSteering;
 import Vehicles.Wheel;
 
 public class Tractor extends ABCCar {
@@ -25,8 +25,13 @@ public class Tractor extends ABCCar {
 		drivingWheels.add(leftFrontWheel);
 		super.driving = new MultiWheelDriving(drivingWheels);
 
-		List<IWheel> steeringWheels = new LinkedList<>(drivingWheels);
-		super.steering = new SimpleSteering(steeringWheels);
+		List<IWheel> simpleSteeringWheels = new LinkedList<>();
+		simpleSteeringWheels.add(rightFrontWheel);
+		simpleSteeringWheels.add(leftFrontWheel);
+		List<IWheel> inverseSteeringWheels = new LinkedList<>();
+		inverseSteeringWheels.add(leftRearWheel);
+		inverseSteeringWheels.add(rightRearWheel);
+		super.steering = new InverseSteering(simpleSteeringWheels, inverseSteeringWheels);
 
 		List<IWheel> allWheels = new ArrayList<>(drivingWheels);
 		super.wheels = allWheels;

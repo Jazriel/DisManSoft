@@ -7,6 +7,10 @@ public class InverseSteering implements ISteering {
 	private List<IWheel> simpleSteeringWheels;
 	private List<IWheel> inverseSteeringWheels;
 	
+	public InverseSteering(List<IWheel> simpleSteeringWheels, List<IWheel> inverseSteeringWheels) {
+		this.simpleSteeringWheels = simpleSteeringWheels;
+		this.inverseSteeringWheels = inverseSteeringWheels;
+	}
 	
 	@Override
 	public void turnLeft(double degrees) {
