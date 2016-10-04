@@ -66,7 +66,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\lib\DisManSoft-0.1.jar
 
 @rem Execute DisManSoft
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %DIS_MAN_SOFT_OPTS%  -classpath "%CLASSPATH%" main.java.SystemApp %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %DIS_MAN_SOFT_OPTS%  -classpath "%CLASSPATH%" main.java.Main %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell

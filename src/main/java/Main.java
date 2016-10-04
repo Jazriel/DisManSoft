@@ -14,7 +14,7 @@ import main.java.vehicles.concrete.Tractor;
 
 public class Main {
 	public static void main(String args[]){
-		String mode = "Triangles";
+		String mode = "Car";
 		
 		switch (mode) {
 		case "Car":
@@ -27,11 +27,11 @@ public class Main {
 			cars.add(new Tractor());
 			
 			for (ABCCar car : cars) {
-				System.out.println("________Acelera_"+ car.getClass() +"________");
+				System.out.println("________Accelerate_"+ car.getClass() +"________");
 				car.accelerate(5);
-				System.out.println("________Gira_"+ car.getClass() +"_izda_______");
+				System.out.println("________TurnLeft_"+ car.getClass() +"_______");
 				car.turnLeft(5);
-				System.out.println("________Gira_"+ car.getClass() +"_drch_______");
+				System.out.println("________TurnRight_"+ car.getClass() +"_______");
 				car.turnRight(5);
 			}
 			break;
