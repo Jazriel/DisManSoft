@@ -1,10 +1,10 @@
-package Vehicles;
+package main.java.test.vehicles;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import Vehicles.ABCCar;
-import Vehicles.concrete.RenaultMegane;
+import main.java.vehicles.ABCCar;
+import main.java.vehicles.concrete.RenaultMegane;
 
 public class renaultMeganeTest {
 

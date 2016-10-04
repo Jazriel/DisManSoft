@@ -3,13 +3,13 @@ package main.java;
 import java.util.ArrayList;
 import java.util.List;
 
-import Vehicles.ABCCar;
-import Vehicles.concrete.MitsubishiOutlander;
-import Vehicles.concrete.RenaultMegane;
-import Vehicles.concrete.RenaultMeganeSport;
-import Vehicles.concrete.ToyotaCorola;
-import Vehicles.concrete.ToyotaCorolaSport;
-import Vehicles.concrete.Tractor;
+import main.java.vehicles.ABCCar;
+import main.java.vehicles.concrete.MitsubishiOutlander;
+import main.java.vehicles.concrete.RenaultMegane;
+import main.java.vehicles.concrete.RenaultMeganeSport;
+import main.java.vehicles.concrete.ToyotaCorola;
+import main.java.vehicles.concrete.ToyotaCorolaSport;
+import main.java.vehicles.concrete.Tractor;
 
 public class Main {
 	public static void main(String args[]){

@@ -1,4 +1,4 @@
-package Vehicles;
+package main.java.vehicles;
 
 import java.util.List;
 

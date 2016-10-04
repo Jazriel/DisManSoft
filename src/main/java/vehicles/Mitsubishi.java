@@ -1,4 +1,4 @@
-package Vehicles;
+package main.java.vehicles;
 
 public class Mitsubishi implements IManufacturer {
 

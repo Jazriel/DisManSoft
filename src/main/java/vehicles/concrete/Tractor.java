@@ -1,15 +1,15 @@
-package Vehicles.concrete;
+package main.java.vehicles.concrete;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import Vehicles.ABCCar;
-import Vehicles.IWheel;
-import Vehicles.InverseSteering;
-import Vehicles.JohnDeere;
-import Vehicles.MultiWheelDriving;
-import Vehicles.Wheel;
+import main.java.vehicles.ABCCar;
+import main.java.vehicles.IWheel;
+import main.java.vehicles.InverseSteering;
+import main.java.vehicles.JohnDeere;
+import main.java.vehicles.MultiWheelDriving;
+import main.java.vehicles.Wheel;
 
 public class Tractor extends ABCCar {
 	public Tractor(){

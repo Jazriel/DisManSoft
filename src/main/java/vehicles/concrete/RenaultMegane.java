@@ -1,15 +1,15 @@
-package Vehicles.concrete;
+package main.java.vehicles.concrete;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import Vehicles.ABCCar;
-import Vehicles.IWheel;
-import Vehicles.MultiWheelDriving;
-import Vehicles.Renault;
-import Vehicles.SimpleSteering;
-import Vehicles.Wheel;
+import main.java.vehicles.ABCCar;
+import main.java.vehicles.IWheel;
+import main.java.vehicles.MultiWheelDriving;
+import main.java.vehicles.Renault;
+import main.java.vehicles.SimpleSteering;
+import main.java.vehicles.Wheel;
 
 public class RenaultMegane extends ABCCar {
 

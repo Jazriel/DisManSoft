@@ -1,4 +1,4 @@
-package Vehicles;
+package main.java.vehicles;
 
 public class JohnDeere implements IManufacturer {
 

@@ -1,19 +1,19 @@
-package Vehicles.concrete;
+package main.java.vehicles.concrete;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import Vehicles.ABCCar;
-import Vehicles.IWheel;
-import Vehicles.Mitsubishi;
-import Vehicles.MultiWheelDriving;
-import Vehicles.SimpleSteering;
-import Vehicles.Wheel;
+import main.java.vehicles.ABCCar;
+import main.java.vehicles.IWheel;
+import main.java.vehicles.MultiWheelDriving;
+import main.java.vehicles.SimpleSteering;
+import main.java.vehicles.Toyota;
+import main.java.vehicles.Wheel;
 
-public class MitsubishiOutlander extends ABCCar {
+public class ToyotaCorolaSport extends ABCCar{
 	
-	public MitsubishiOutlander() {
+	public ToyotaCorolaSport() {
 		IWheel leftFrontWheel = new Wheel("leftFrontWheel");
 		IWheel rightFrontWheel = new Wheel("rightFrontWheel");
 		IWheel leftRearWheel = new Wheel("leftRearWheel");
@@ -22,8 +22,6 @@ public class MitsubishiOutlander extends ABCCar {
 		List<IWheel> drivingWheels = new LinkedList<IWheel>();
 		drivingWheels.add(leftRearWheel);
 		drivingWheels.add(rightRearWheel);
-		drivingWheels.add(rightFrontWheel);
-		drivingWheels.add(leftFrontWheel);
 		super.driving = new MultiWheelDriving(drivingWheels);
 
 		List<IWheel> steeringWheels = new LinkedList<IWheel>();
@@ -32,9 +30,10 @@ public class MitsubishiOutlander extends ABCCar {
 		super.steering = new SimpleSteering(steeringWheels);
 
 		List<IWheel> allWheels = new ArrayList<>(drivingWheels);
+		allWheels.addAll(steeringWheels);
 		super.wheels = allWheels;
 
-		super.manufacturer = new Mitsubishi();
+		super.manufacturer = new Toyota();
 	}
 
 }

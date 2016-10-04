@@ -1,4 +1,4 @@
-package Vehicles;
+package main.java.vehicles;
 
 public interface IWheel {
 	public void accelerate(double km);
