@@ -11,10 +11,14 @@ import main.java.vehicles.concrete.RenaultMeganeSport;
 import main.java.vehicles.concrete.ToyotaCorola;
 import main.java.vehicles.concrete.ToyotaCorolaSport;
 import main.java.vehicles.concrete.Tractor;
+import main.java.composite.CompositePart;
+import main.java.composite.IPart;
+import main.java.composite.Part;
+import main.java.iouse.Console;
 
 public class Main {
 	public static void main(String args[]){
-		String mode = "Car";
+		String mode = "Composite";
 		
 		switch (mode) {
 		case "Car":
@@ -44,6 +48,35 @@ public class Main {
 			System.out.println(tf.crearTriangulo(10, 15, 20).getDescription().equals("Scalene"));
 			System.out.print("Isosceles triangle correctly created: ");
 			System.out.println(tf.crearTriangulo(10, 20, 10).getDescription().equals("Isosceles"));
+			break;
+			
+		case "Console":
+			System.out.println("Numero entero");
+			System.out.println("		" + Console.readInt());
+			System.out.println("Numero double");
+			System.out.println("		" + Console.readDouble());
+			System.out.println("Numero float");
+			System.out.println("		" + Console.readFloat());
+			System.out.println("Caracter");
+			System.out.println("		" + Console.readChar());
+			break;
+			
+		case "Composite":
+			Part tornillo = new Part(34, "Tornillo", "Esta es la descripcion de un tornillo");
+			Part valvula = new Part(100, "Valvula", "ESta es la descripcion de una valvula");
+			List<IPart> partesValvula = new ArrayList<>();
+			partesValvula.add(tornillo);
+			partesValvula.add(tornillo);
+			CompositePart llanta = new CompositePart(500, "Llanta", "Esto es una llanta", partesValvula);
+			List<IPart> partesNeumatico = new ArrayList<>();
+			partesNeumatico.add(llanta);
+			partesNeumatico.add(valvula);
+			CompositePart neumatico = new CompositePart(3000, "Neumatico", "Esto es un neumatico", partesNeumatico);
+			System.out.print("Coste de un neumatico: ");
+			System.out.println(neumatico.getPrice());
+			break;
+			
+			
 		default:
 			break;
 		}
