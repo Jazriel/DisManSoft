@@ -1,5 +1,11 @@
 package main.java;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +21,12 @@ import main.java.composite.CompositePart;
 import main.java.composite.IPart;
 import main.java.composite.Part;
 import main.java.iouse.Console;
+import main.java.serialize.Boss;
+import main.java.serialize.Employee;
 
 public class Main {
-	public static void main(String args[]){
-		String mode = "Composite";
+	public static void main(String args[]) throws Exception{
+		String mode = "Serialize";
 		
 		switch (mode) {
 		case "Car":
@@ -75,7 +83,31 @@ public class Main {
 			System.out.print("Coste de un neumatico: ");
 			System.out.println(neumatico.getPrice());
 			break;
+		
+		case "Reader":
 			
+			break;
+		case "Serialize":
+			Employee[] employees = new Employee[3];
+			employees[0] = new Employee("Nombre0", 50);
+			employees[1] = new Employee("Nombre1", 51);
+			employees[2] = new Boss("Nombre2", 52,2);
+			
+			FileOutputStream fileOut = new FileOutputStream("emp.dat");
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			out.writeObject(employees);
+			out.close();
+			fileOut.close();
+			
+			FileInputStream fileIn = new FileInputStream("emp.dat");
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			employees = (Employee[]) in.readObject();
+			in.close();
+			fileIn.close();
+			for (Employee employee : employees) {
+				System.out.println(employee.toString());			
+			}
+			break;
 			
 		default:
 			break;
