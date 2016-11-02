@@ -6,6 +6,7 @@ public class Boss extends Employee implements Serializable{
 	
 	private static final long serialVersionUID = -7371310745244471379L;
 	private double bonus;
+	private Employee assistant;
 
 	public Boss(String name, double wage, double _bonus) {
 		super(name, wage);
@@ -21,7 +22,15 @@ public class Boss extends Employee implements Serializable{
 	}
 	
 	public String toString() {
-		return super.toString()+"Boss("+this.bonus+");";		
+		return super.toString()+"Boss("+this.bonus+").setAssistant("+assistant.toString()+");";		
+	}
+
+	public Employee getAssistant() {
+		return assistant;
+	}
+
+	public void setAssistant(Employee assistant) {
+		this.assistant = assistant;
 	}
 	
 }

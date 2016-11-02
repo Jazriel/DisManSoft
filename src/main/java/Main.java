@@ -91,7 +91,9 @@ public class Main {
 			Employee[] employees = new Employee[3];
 			employees[0] = new Employee("Nombre0", 50);
 			employees[1] = new Employee("Nombre1", 51);
-			employees[2] = new Boss("Nombre2", 52,2);
+			Boss b =  new Boss("Nombre2", 52,2);
+			b.setAssistant(employees[0]);
+			employees[2] = b;
 			
 			FileOutputStream fileOut = new FileOutputStream("emp.dat");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
