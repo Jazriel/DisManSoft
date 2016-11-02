@@ -22,7 +22,11 @@ public class Boss extends Employee implements Serializable{
 	}
 	
 	public String toString() {
-		return super.toString()+"Boss("+this.bonus+").setAssistant("+assistant.toString()+");";		
+		if (assistant!=null){
+			return super.toString()+"Boss("+this.bonus+").setAssistant("+assistant.toString()+");";
+		}else{
+			return super.toString()+"Boss("+this.bonus+");";
+		}
 	}
 
 	public Employee getAssistant() {
